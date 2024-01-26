@@ -35,9 +35,9 @@ class SkinDarkVector extends SkinTemplate {
 	 */
 	private $darkvectorConfig;
 
-	public function __construct( $options = [] ) {
-		$options['bodyOnly'] = true;
+	public function __construct( $options ) {
 		$this->darkvectorConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'darkvector' );
+		$options['bodyOnly'] = true;
 		parent::__construct( $options );
 	}
 
@@ -75,7 +75,7 @@ class SkinDarkVector extends SkinTemplate {
 		$modules = parent::getDefaultModules();
 
 		$styles = array( 'skins.darkvector.styles' );
-		Hooks::run( 'SkinDarkVectorStyleModules', array( $this, &$styles ) );
+		$this->getHookContainer()->run( 'SkinDarkVectorStyleModules', array( $this, &$styles ) );
 		$modules['styles']['skin'] = $styles;
 		return $modules;
 	}
