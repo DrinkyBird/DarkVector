@@ -30,7 +30,7 @@
 	"@note": "When modifying skins.darkvector.styles definition, make sure the installer still works",
 	"ResourceModules": {
 		"skins.darkvector.styles": {
-			"class": "ResourceLoaderSkinModule",
+			"class": "MediaWiki\\ResourceLoader\\SkinModule",
 			"features": {
 				"content-links": true,
 				"content-media": true,
